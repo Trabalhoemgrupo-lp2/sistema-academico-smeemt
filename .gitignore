@@ -1,0 +1,15 @@
+# Ignorar build
+/target/
+/.idea/
+/*.iml
+
+# Ignorar configurações locais
+application.properties
+
+# Ignorar backups e arquivos temporários
+*.log
+*.tmp
+
+# Ignorar arquivos de sistema
+.DS_Store
+Thumbs.db

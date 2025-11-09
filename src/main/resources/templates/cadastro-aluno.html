@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/cabecalho :: cabecalho}"></head>
+<body>
+
+<div th:replace="~{layout/menu :: menu}"></div>
+
+<div class="container mt-4">
+    <h2 class="mb-4">Cadastro de Aluno</h2>
+
+    <form th:action="@{/salvar-aluno}" th:object="${aluno}" method="post">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Nome:</label>
+                <input type="text" th:field="*{nome}" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Email:</label>
+                <input type="email" th:field="*{email}" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label class="form-label">Telefone:</label>
+                <input type="text" th:field="*{telefone}" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">CPF:</label>
+                <input type="text" th:field="*{cpf}" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Data de Nascimento:</label>
+                <input type="date" th:field="*{dataNascimento}" class="form-control">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a th:href="@{/alunos}" class="btn btn-secondary">Voltar</a>
+    </form>
+</div>
+
+</body>
+</html>

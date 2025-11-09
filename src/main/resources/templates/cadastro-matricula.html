@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head}"></head>
+<body>
+
+<div th:replace="~{fragments/menu :: menu}"></div>
+
+<div class="container mt-4">
+    <h2>Cadastro de Matrícula</h2>
+
+    <form th:action="@{/matriculas/salvar}" th:object="${matricula}" method="post">
+
+        <div class="form-group mb-3">
+            <label for="aluno">Aluno:</label>
+            <select th:field="*{aluno}" id="aluno" class="form-select" required>
+                <option value="">Selecione um aluno</option>
+                <option th:each="a : ${alunos}" th:value="${a}" th:text="${a.nome}"></option>
+            </select>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="curso">Curso:</label>
+            <select th:field="*{curso}" id="curso" class="form-select" required>
+                <option value="">Selecione um curso</option>
+                <option th:each="c : ${cursos}" th:value="${c}" th:text="${c.nome}"></option>
+            </select>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="dataMatricula">Data da Matrícula:</label>
+            <input type="date" th:field="*{dataMatricula}" id="dataMatricula" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a th:href="@{/matriculas}" class="btn btn-secondary">Voltar</a>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+# 🎓 SMEEMT - Sistema Acadêmico
+
+Sistema desenvolvido em **Spring Boot + Thymeleaf + MySQL** para gerenciamento de alunos, cursos, turmas e matrículas.
+
+## 🚀 Tecnologias
+- Java 21
+- Spring Boot 3
+- Thymeleaf
+- MySQL
+- Bootstrap
+
+## 🧩 Como rodar
+1. Importe o banco `src/main/resources/database/sistema_academico.sql`
+2. Crie seu `application.properties` usando `application-example.properties` como modelo
+3. Rode:
+   ```bash
+   mvn spring-boot:run
